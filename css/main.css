@@ -1,0 +1,106 @@
+@charset 'utf-8';
+html {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+}
+
+body {
+  overflow-x: hidden; 
+  /* 바디에 기본적으로 가로 스크롤이 생기지 않게 하도록 한다 */
+  color: rgb(29, 29, 31);
+  letter-spacing: -0.05em;
+  /* 자간 줄여주기 */
+  background-color: white;
+}
+
+p {
+  line-height: 1.6;
+  /* 행간 */
+}
+
+a {
+  color: rgb(29, 29, 31);
+  text-decoration: none;
+  /* 밑줄 없앰 */
+}
+
+.global-nav {
+  height: 44px;
+}
+
+.local-nav {
+  height: 52px;
+  border-bottom: 1px solid #ddd;
+}
+
+.global-nav-links,
+.local-nav-links {
+  max-width: 1000px;
+  /* 
+    폭 조절 및 배치
+    네비바의 width 영역이 제한이 되어있음
+    center 정렬이 되어있음
+    최대 폭 정하고, 이 폭 보다 브라우저가 작아지면
+    자연스럽게 같이 줄어들도록 한다.
+  */
+  margin: 0 auto; 
+  /* center 정렬 */
+
+  display: flex;
+  /* justify-content: space-between; */
+  /* 
+    네비바가 균일한 간격으로 spacing 처리 되어서 배치되어 있음
+    display + justify-content
+    배치되어 있는 방향으로 정렬하는 방법
+    flex-start가 default며 앞쪽으로 정렬되어 있음
+   */
+  
+   align-items: center;
+   /*
+    여기까지 됐을 때 높이가 44px 인데 top에 붙어있음
+    그것을(수직방향정렬) center로 만들기 위함
+   */
+   height: 100%
+   /* 여기서 height를 먹여야 높이가 있기 때문에 수직방향 정렬이 가능하다 */
+
+   /* 
+    관련된 내용
+    display: block과 flex의 차이는
+    div 안에 요소들이 block일 때는 세로로 쌓이고,
+    flex를 주면 가로로 쌒이게 되면서 자신이 가진 내용물의 width 만큼 차지하게 된다.
+   */
+}
+
+.global-nav-links {
+  justify-content: space-between;
+  /* 제일 상단의 nav바에만 적용될 속성 */
+}
+
+.local-nav-links .product-name {
+  margin-right: auto;
+  /* 
+    margin-auto: 내가 가질 수 있는 여백을 전부 소비를 한다! 
+    그래서, center 정렬할 때 margin-left, margin-right를 0으로 하는 이유가
+    오른쪽 왼쪽 마진을 전부 사용하여 가운데로 정렬을 한다는 의미이다.
+  */
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* 
+  구조가 .local-nav-links > a 인데 (.product name은 a 태그임)
+  product-name에 단독으로 폰트 사이즈를 지정하려고 하면 안된다.
+  우선순위가 있기 때문임.
+  그래서 .product-name 앞에 .local-nav-links를 덧붙여줌
+  a나 img 같은 태그보다 구체적인 class 태그가 우선권을 가짐 
+*/
+.local-nav-links a {
+  font-size: 0.8rem;
+}
+
+.local-nav-links a:not(.product-name) {
+  margin-left: 2em;
+}
+/* not 태그: 괄호 안에 있는 조건은 제외한다 */
+
+
