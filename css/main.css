@@ -26,11 +26,13 @@ a {
 
 .global-nav {
   height: 44px;
+  padding: 0 1rem;
 }
 
 .local-nav {
   height: 52px;
   border-bottom: 1px solid #ddd;
+  padding: 0 1rem;
 }
 
 .global-nav-links,
@@ -103,4 +105,55 @@ a {
 }
 /* not 태그: 괄호 안에 있는 조건은 제외한다 */
 
+.scroll-section {
+  padding-top: 50vh;
+  /* 뷰포트 높이란 인터넷 브라우저 창의 높이를 말한다 */
+}
 
+#scroll-section-0 h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
+.main-message {
+  display: flex;
+  align-items: center; 
+  /* 세로 방향 센터 정렬 */
+  justify-content: center;
+  margin: 5px 0;
+  /* 가로 방향 센터 정렬 */
+  height: 3em;
+  font-size: 2.5em;
+}
+
+.main-message p {
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.description {
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.description strong {
+  float: left;
+  margin-right: 0.2em;
+  font-size: 3rem;
+  color: rgb(29, 29, 31)
+}
+/*
+  현재 내 폰트 사이즈가 3rem이고
+  이거의 20% 정도로 여백을 두겠다라는 의미
+  현재 우리 html font-size를 14px로 놨다.
+  1rem이 14px 이고, 3rem 이면 42px
+  42px의 0.2배 -> 8.4 
+  그래서 margin-right가 영역에서 8.4px를 먹게된다.
+*/
+
+/*
+  rem, em 차이 두는 이유
+  : em -> 현재 내 사이즈의 비율을 활용할 수 있다.
+*/
