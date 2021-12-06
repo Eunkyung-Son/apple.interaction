@@ -213,6 +213,29 @@ a {
   background-color : darkorange;
 }
 
+
+.sticky-elem {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+   /*
+    폭을 꽉 차게 늘려주기
+   */
+}
+
+#show-scene-0 #scroll-section-0 .sticky-elem,
+#show-scene-1 #scroll-section-1 .sticky-elem,
+#show-scene-2 #scroll-section-2 .sticky-elem,
+#show-scene-3 #scroll-section-3 .sticky-elem {
+  display: block;
+}
+/*
+  현재 스크롤 중인 구간을 자바스크립트로 아이디를 붙여준다
+  그러면 현재 스크롤중인 영역만 보여주게 된다.
+*/
+
 @media (min-width: 1024px) {
   #scroll-section-0 h1 {
     font-size: 9vw;
@@ -254,3 +277,8 @@ a {
     font-size: 2rem;
   }
 }
+
+/*
+  position: fixed => 고정
+  position: sticky => 스크롤을 아무리 내려도 일정 높이가 되면 위치가 고정이 되어있음
+*/
