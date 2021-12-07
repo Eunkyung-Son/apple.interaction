@@ -25,11 +25,21 @@ a {
 }
 
 .global-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* 상단바도 스크롤 영역에 포함시키기 위함 */
   height: 44px;
   padding: 0 1rem;
 }
 
 .local-nav {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100%;
+  /* 상단바도 스크롤 영역에 포함시키기 위함 */
   height: 52px;
   border-bottom: 1px solid #ddd;
   padding: 0 1rem;
@@ -106,6 +116,8 @@ a {
 /* not 태그: 괄호 안에 있는 조건은 제외한다 */
 
 .scroll-section {
+  border: 3px solid red;
+  /* 스크롤 영역 보기 위한 임시 보더 */
   padding-top: 50vh;
   /* 뷰포트 높이란 인터넷 브라우저 창의 높이를 말한다 */
 }
@@ -234,6 +246,7 @@ a {
 /*
   현재 스크롤 중인 구간을 자바스크립트로 아이디를 붙여준다
   그러면 현재 스크롤중인 영역만 보여주게 된다.
+  -> body에 해당 씬 아이디가 붙으면 그 때 해당 되는 것만 보여주기 위함
 */
 
 @media (min-width: 1024px) {
