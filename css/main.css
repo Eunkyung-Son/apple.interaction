@@ -136,6 +136,7 @@ a {
   /* 가로 방향 센터 정렬 */
   height: 3em;
   font-size: 2.5em;
+  opacity: 0;
 }
 
 .main-message p {
